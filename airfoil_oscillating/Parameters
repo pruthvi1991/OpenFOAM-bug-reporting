@@ -1,0 +1,29 @@
+Source : High-order accurate simulations of unsteady flow past plunging and pitching airfoils - Liang et al.
+
+//*************************************************************************************//
+
+Slow Plunging Case:
+Re = 1850
+Sr = whc/U = 0.46       // mentioned in paper, sec 4.2
+c = 0.457m              // Arbitralily chosen
+h = 0.08c = 0.3656m     // mentioned in paper, sec 4.2
+U = 0.0417698 m/s       // Calculated for Sr = 0.46
+w = 1.15 rad/sec        // circular frequency, sec 4.2
+nu = 0.000010318 m^2/sec  // kinematic viscosity, Calculated from Re = 1850
+
+//*************************************************************************************//
+
+dynamicMeshDict parameters:
+w = 1.15 = (k/m)^0.5    // frequency for a spring mass system
+m = 10000kg             // mass, Arbitrarily chosen
+k = 13225N/m            // Linear spring stiffness, Calculated from omega, w
+v = w*h = 1.697m/s      // Initial velocity of mass when displacement is 0
+
+//*************************************************************************************//
+
+forceCoeffs parameters:
+magUInf     0.0417698m/s;   // Ambient velocity = U
+lRef        0.457m;        // chord length
+Aref        0.457m;        // Area = chord_length*depth = 0.457*1 = 0.457
+
+//*************************************************************************************//
