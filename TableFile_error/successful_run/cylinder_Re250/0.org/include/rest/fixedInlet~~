@@ -1,0 +1,22 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+inlet
+{
+        type            oscillatingFixedValue;
+        refValue        uniform 1;
+        offset          -1.0;
+        amplitude       csvFile;
+	{
+		
+        frequency       constant 1;
+ //   type  fixedValue;
+ //   value $internalField;
+}
+
+// ************************************************************************* //

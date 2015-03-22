@@ -1,0 +1,43 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+top		//AndBottom
+{
+	type uniformFixedValue;
+	uniformValue tableFile;
+        tableFileCoeffs
+        {
+            fileName           "/home/jujja/OpenFOAM/root-2.3.x/run/tutorials/incompressible/pimpleFoam/cylinder_inertial/cylinder_Re250/0.org/include/data/top";    // name of data file
+            outOfBounds         repeat;       // optional out-of-bounds handling
+            interpolationScheme linear;      // optional interpolation method
+        };
+}
+
+bottom
+{
+	type uniformFixedValue;
+        uniformValue tableFile;
+        tableFileCoeffs
+        {
+            fileName           "/home/jujja/OpenFOAM/root-2.3.x/run/tutorials/incompressible/pimpleFoam/cylinder_inertial/cylinder_Re250/0.org/include/data/bottom";    // name of data file
+            outOfBounds         repeat;       // optional out-of-bounds handling
+            interpolationScheme linear;      // optional interpolation method
+        };
+}
+
+front
+{
+    type empty;
+}
+
+back
+{
+    type empty;
+}
+
+// ************************************************************************* //

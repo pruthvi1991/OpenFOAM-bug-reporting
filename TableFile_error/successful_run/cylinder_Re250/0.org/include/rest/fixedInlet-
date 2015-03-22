@@ -1,0 +1,42 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+inlet
+{
+        type            oscillatingFixedValue;
+        refValue        uniform 1;
+        offset          -1.0;
+        amplitude       csvFile;
+	csvFileCoeffs
+	{
+	    nHeaderLine         4;
+            refColumn           0;          // reference column index
+            componentColumns    (1 2 3);    // component column indices
+            separator           ",";        // optional (defaults to ",")
+            mergeSeparators     no;         // merge multiple separators
+            fileName            "fileXYZ";  // name of csv data file
+            outOfBounds         clamp;      // optional out-of-bounds handling
+            interpolationScheme linear;     // optional interpolation scheme
+        }
+	frequency       csvFile;
+	csvFileCoeffs
+	{
+	    nHeaderLine         4;
+            refColumn           0;          // reference column index
+            componentColumns    (1 2 3);    // component column indices
+            separator           ",";        // optional (defaults to ",")
+            mergeSeparators     no;         // merge multiple separators
+            fileName            "fileXYZ";  // name of csv data file
+            outOfBounds         clamp;      // optional out-of-bounds handling
+            interpolationScheme linear;     // optional interpolation scheme
+        };
+ //   type  fixedValue;
+ //   value $internalField;
+}
+
+// ************************************************************************* //

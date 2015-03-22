@@ -1,0 +1,23 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+inlet
+{
+	type uniformFixedValue;
+	uniformValue tableFile;
+        tableFileCoeffs
+        {
+           // dimensions          [0 1 -1 0 0]; // optional dimensions
+           // type
+	    fileName		 "/home/jujja/OpenFOAM/root-2.3.x/run/tutorials/incompressible/pimpleDyMFoam/onemeterplate/coarseMesh/Liang/convergence/0.2_flatplate_37754/inertial_0.2Mach_NACA0012_1e-3_6procs/0.org/include/data/inletFile"; // name of data file
+            outOfBounds         repeat;       // optional out-of-bounds handling
+            interpolationScheme linear;      // optional interpolation method
+        }
+}
+
+// ************************************************************************* //
