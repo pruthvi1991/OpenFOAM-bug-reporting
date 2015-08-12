@@ -1,0 +1,61 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      T;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 0 1 0 0 0];
+
+internalField   uniform 300;
+
+boundaryField
+{
+    inlet
+    {
+        type            uniformFixedGradient;
+        uniformGradient       tableFile;
+        uniformGradientCoeffs
+        {
+            fileName           "/home/jujja/OpenFOAM/root-2.3.x/run/tutorials/basic/scalarTransportFoam/pitzDaily_noflow/0/data";    // name of data file
+            outOfBounds         repeat;       // optional out-of-bounds handling
+            interpolationScheme linear;      // optional interpolation method
+        };
+    }
+
+    outlet
+    {
+        type            fixedValue;
+        value           uniform 300;
+    }
+
+    upperWall
+    {
+       type            zeroGradient; 
+       // type            fixedValue;
+       // value           uniform 350;
+    }
+
+    lowerWall
+    {
+        type            zeroGradient; 
+        //type            fixedValue;
+        //value           uniform 320;
+    }
+
+    frontAndBack
+    {
+        type            empty;
+    }
+}
+
+// ************************************************************************* //
