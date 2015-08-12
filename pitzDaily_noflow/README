@@ -4,7 +4,7 @@ inlet
     {
         type            uniformFixedGradient;
         uniformGradient       tableFile;
-        uniformGradientCoeffs // Notice that this was formerly tableFileCoeffs. Seems to have changed in the latest version
+        uniformGradientCoeffs
         {
             fileName           "/home/jujja/OpenFOAM/root-2.3.x/run/tutorials/basic/scalarTransportFoam/pitzDaily_noflow/0/data";    // name of data file
             outOfBounds         repeat;       // optional out-of-bounds handling
@@ -36,7 +36,7 @@ inlet
     {
         type            uniformFixedValue;
         uniformValue       tableFile;
-        uniformValueCoeffs // Notice that this was formerly tableFileCoeffs. Seems to have changed in the latest version
+        uniformValueCoeffs
         {
             fileName           "/home/jujja/OpenFOAM/root-2.3.x/run/tutorials/basic/scalarTransportFoam/pitzDaily_noflow/0/data";    // name of data file
             outOfBounds         repeat;       // optional out-of-bounds handling
