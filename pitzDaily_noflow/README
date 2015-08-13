@@ -1,3 +1,6 @@
+// UPDATE : 
+Resolved by commit e7e54e156ce92b90e79acafe735db5ec13e97772 in OpenFOAM-2.4.x -----> http://www.openfoam.org/mantisbt/view.php?id=1827
+
 This case is crashing when I try to use the uniformFixedGradient in combination with tableFile. The intention is to simulate a time-varying heat flux entering the domain from one end. It is implemented as follows.
 
 inlet
